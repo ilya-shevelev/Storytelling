@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "storytelling"
+version = "0.1.0"
+description = ""
+authors = ["Ilya Shevelev <ilasevelev10776@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "^4.2.7"
+djangorestframework = "^3.14.0"
+psycopg2-binary = "^2.9.9"
+gunicorn = "^21.2.0"
+python-dotenv = "^1.0.0"
+drf-yasg = "^1.21.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,9 @@
+venv
+.git
+.gitignore
+.env
+.env.dev
+docker*.yml
+.gitlab-ci.yml
+.pre-commit-config.yaml
+.vscode

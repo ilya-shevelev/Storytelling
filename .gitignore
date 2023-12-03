@@ -1,0 +1,17 @@
+.git
+dist
+db.sqlite3
+venv
+.env.dev
+.env
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
+*.pyc
+!*media/.gitkeep
+media/*
+!*static/.gitkeep
+static/*
+log/*
+.vscode/*
