@@ -8,7 +8,7 @@ from config.settings import BASE_DIR
 
 def main():
     """Run administrative tasks."""
-    load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env.prod"))
+    load_dotenv(dotenv_path=os.path.join(BASE_DIR, ".env"))
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", f'{os.environ["CONFIG_ROOT"]}.settings')
     try:
         from django.core.management import execute_from_command_line
