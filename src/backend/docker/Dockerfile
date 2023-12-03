@@ -32,5 +32,3 @@ COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
     && mkdir -p /app/media /app/static \
     && chmod +x /app/media/ /app/static/
-
-WORKDIR ./

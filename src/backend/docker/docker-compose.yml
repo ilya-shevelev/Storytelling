@@ -6,8 +6,6 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    env_file:
-      - docker/.env.prod
     command: /entrypoint.sh
     volumes:
       - static:/app/static
@@ -17,27 +15,25 @@ services:
       - 8000
     ports:
       - '8000:8000'
-    depends_on:
-      - db
-    networks:
-      - db
+    # depends_on:
+    #   - db
+    # networks:
+    #   - db
 
-  db:
-    container_name: db
-    image: postgres:14-alpine
-    volumes:
-      - pgdata:${PGDATA}
-    restart: always
-    env_file:
-      - docker/.env.prod
-    ports:
-      - '${POSTGRES_PORT}:5432'
-    networks:
-      - db
+  # db:
+  #   container_name: db
+  #   image: postgres:14-alpine
+  #   volumes:
+  #     - pgdata:${PGDATA}
+  #   restart: always
+  #   ports:
+  #     - '${POSTGRES_PORT}:5432'
+  #   networks:
+  #     - db
 
 volumes:
   media:
   static:
-  pgdata:
-networks:
-  db:
+#   pgdata:
+# networks:
+#   db:
