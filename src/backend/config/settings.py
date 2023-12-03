@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DJANGO_ENV = os.getenv("DJANGO_ENV", "dev")
 DEBUG = DJANGO_ENV != "prod"
 
-ALLOWED_HOSTS = os.getenv["DJANGO_ALLOWED_HOSTS"].split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS").split(",")
 
 # Application definition
 
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = f'{os.getenv["CONFIG_ROOT"]}.urls'
+ROOT_URLCONF = f'{os.getenv("CONFIG_ROOT")}.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = f'{os.getenv["CONFIG_ROOT"]}.wsgi.application'
+WSGI_APPLICATION = f'{os.getenv("CONFIG_ROOT")}.wsgi.application'
 
 
 # Database
@@ -76,9 +76,13 @@ WSGI_APPLICATION = f'{os.getenv["CONFIG_ROOT"]}.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+        "ENGINE": os.environ["DB_ENGINE"],
+        "NAME": os.environ["DB_NAME"],
+        "USER": os.environ["DB_USER"],
+        "PASSWORD": os.environ["DB_PASSWORD"],
+        "HOST": os.environ["DB_HOST"],
+        "PORT": os.environ["DB_PORT"],
+    },
 }
 
 
