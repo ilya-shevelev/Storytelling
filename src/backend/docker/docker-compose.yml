@@ -11,8 +11,6 @@ services:
       - static:/app/static
       - media:/app/media
     restart: always
-    expose:
-      - 8000
     ports:
       - '8000:8000'
     env_file:
